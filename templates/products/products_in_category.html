@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block content %}
+<h3 class="h3 bg-light p-2">{{ category.name }}</h3>
+
+    <hr>
+    <div>
+        <ul>
+            <div class="row">
+                {% for product in products %}
+                <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 float-left pb-4">
+                    <a href="{{ url_for('products_app.product', id=product.id)}}">
+                        <img class="w-100" src="{{ url_for('static', filename=product.image) }}">
+                        <h5 class="text-center"> {{ product.name }}</h5>
+                        <p class="text-black-50 text-center icon-shopping-cart">${{ product.price }}</p>
+                    </a>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+
+        </ul>
+    </div>
+
+    {% endblock content %}
