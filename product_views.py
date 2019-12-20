@@ -17,13 +17,10 @@ products_app = Blueprint('products_app', __name__)
 def products_in_category(id=None):
     category = session.query(Category).filter(Category.id == id).first()
     products = session.query(Product).filter(Product.category_id == id)
-
-    print(category)
     context = {
         'category': category,
         'products': products,
     }
-
     return render_template('products/products_in_category.html', **context)
 
 

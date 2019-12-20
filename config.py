@@ -5,7 +5,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     FLASK_ADMIN_SWATCH = 'Flatly'  # admin panel style
     IMAGES_PATH = 'img/'
-    SECRET_KEY = '3adcc6e6-5467-46a9-9486-4d819b34fd96'
+    SECRET_KEY = 'some_key'
 
 
 class ProductionConfig(Config):
